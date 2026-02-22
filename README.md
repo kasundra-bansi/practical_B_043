@@ -4,7 +4,8 @@
 
 | Name | Enrollment Number | Practical Set |
 |------|------------------|--------------|
-| Your Name | Your Enrollment No | Set A |
+| Bansi Kasaundra | 202504104610043 | Set B |
+| Shiv | 202504104610036 | Set A |
 
 ---
 

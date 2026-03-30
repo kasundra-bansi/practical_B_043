@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pattern Generator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            white-space: pre;
+            font-family: monospace;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Pattern Generator</h2>
+
+<input type="text" id="symbol" placeholder="Enter Symbol (+)">
+<input type="number" id="rows" placeholder="Enter Rows">
+
+<br>
+
+<button onclick="triangle()">Triangle</button>
+<button onclick="pyramid()">Left Pyramid</button>
+
+<div id="output"></div>
+
+<script>
+
+// 🔺 1. Triangle (same)
+function triangle() {
+    let sym = document.getElementById("symbol").value;
+    let rows = document.getElementById("rows").value;
+    let out = "";
+
+    for (let i = 1; i <= rows; i++) {
+        for (let j = 1; j <= i; j++) {
+            out += sym + " ";
+        }
+        out += "\n";
+    }
+
+    document.getElementById("output").innerText = out;
+}
+
+
+// 🔺 2. Left Side Pyramid
+function pyramid() {
+    let sym = document.getElementById("symbol").value;
+    let rows = document.getElementById("rows").value;
+    let out = "";
+
+    for (let i = 1; i <= rows; i++) {
+
+        // left spaces (shift right)
+        for (let j = 1; j <= rows - i; j++) {
+            out += "  ";
+        }
+
+        // symbols
+        for (let k = 1; k <= i; k++) {
+            out += sym + " ";
+        }
+
+        out += "\n";
+    }
+
+    document.getElementById("output").innerText = out;
+}
+
+</script>
+
+</body>
+</html>
